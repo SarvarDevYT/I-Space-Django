@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Member
+from .models import Product
 
 def members_list(request):
-    mymembers = Member.objects.all().values()
+    products = Product.objects.all()
     context = {
-        'mymembers': mymembers,
+        'products': products,
     }
     return render(request, 'members/index.html', context)

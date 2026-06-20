@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Klub A'zolari</title>
+    <title>iSpace - Mahsulotlar Katalogi</title>
 </head>
 <body>
 
-    <h1>Klub A'zolari Ro'yxati</h1>
+    <h1>iSpace Internet Do'koni - Mahsulotlar Ro'yxati</h1>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
-                <th>Rasm (Avatar)</th>
-                <th>Ism</th>
-                <th>Familiya</th>
-                <th>Telefon</th>
-                <th>Yoshi</th>
-                <th>Biografiya (Bio)</th>
+                <th>Rasm</th>
+                <th>Mahsulot Nomi</th>
+                <th>Brend (Vendor)</th>
+                <th>Narxi (so'm)</th>
+                <th>Eski Narxi</th>
+                <th>Displey</th>
+                <th>Protsessor</th>
+                <th>Xotira</th>
             </tr>
         </thead>
         <tbody>
-            {% for x in mymembers %}
+            {% for x in products %}
             <tr>
                 <td>
-                    {% if x.avatar %}
-                        <img src="/media/{{ x.avatar }}" width="100">
+                    {% if x.image %}
+                        <img src="{{ x.image.url }}" width="100">
                     {% else %}
-                        Rasm yo'q
+                        Rasm yuklanmagan
                     {% endif %}
                 </td>
 
-                <td>{{ x.firstname }}</td>
-                <td>{{ x.lastname }}</td>
-                <td>{{ x.phone }}</td>
-                <td>{{ x.age }}</td>
-                <td>{{ x.bio }}</td>
+                <td>{{ x.title }}</td>
+                <td>{{ x.vendor }}</td>
+                <td>{{ x.price }}</td>
+                <td>{{ x.old_price }}</td>
+                <td>{{ x.display_size }}</td>
+                <td>{{ x.processor }}</td>
+                <td>{{ x.internal_memory }}</td>
             </tr>
             {% endfor %}
         </tbody>
