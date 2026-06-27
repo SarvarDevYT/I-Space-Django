@@ -10,3 +10,5 @@ services:
         value: "False"
       - key: PYTHON_VERSION
         value: "3.11.10"
+      - key: SECRET_KEY
+        generateValue: true
