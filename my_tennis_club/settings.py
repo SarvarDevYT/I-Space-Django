@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)j9$(hany^%b%-8g%)z6!38)61zr+7zi15(1i@k^#v9e#kbs52'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# ALLOWED_HOSTS
+ALLOWED_HOSTS = ['yourdomain.onrender.com', 'localhost']
 
-ALLOWED_HOSTS = []
+# DEBUG - production-da false qiling
+DEBUG = False
+
+# DATABASES - PostgreSQL yoki SQLite ishlating
+# Render-ga free tier da sqlite3 ishlatish mumkin
+
+# Static files
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Application definition
