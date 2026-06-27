@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: i-space-django
+    env: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: gunicorn my_tennis_club.wsgi:application
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: PYTHON_VERSION
+        value: "3.11.10"
